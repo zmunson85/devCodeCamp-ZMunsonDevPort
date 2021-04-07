@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+}
+/* setup and common stylings */
+/* https://www.w3schools.com/cssref/sel_target.asp */
+:root{
+    --poppins: 'Poppins', sans-serif;
+    --sans: 'Open Sans', sans-serif;
+    --green: #1f3de9;
+    --black: rgb(17, 17, 17);
+    --nero: #6586df;
+    /* delivery time in miliseconds as the transition eases in on load */
+    --transition: all 0.4s ease;
+}
+
+body{
+    color: rgb(144, 90, 32);
+    line-height: 1.5;
+    background: var(--black);
+    overflow-x: hidden;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+img{
+    width: 60%;
+    height: 60%;
+    display: block;
+}
+/* remove the bullets from list items */
+ul li{
+    list-style-type: none;
+}
+/* grab text elements by tag, group styling */
+h1, h2, h3, h4, h5, h6, p{
+    padding: 0.6rem 0;
+}
+
+/* button */
+.btn{
+    border: none;
+    margin: 1rem 0;
+    border-radius: 35px;
+    background: var(--green);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: inline-block;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn:hover{
+    opacity: 0.7;
+}
+
+.text{
+    font-size: 1.05rem;
+    color: #d0d0d0;
+    line-height: 1.7;
+}
+
+/* title */
+.title{
+    position: relative;
+}
+.title > h2{
+    font-size: 3rem;
+    font-family: var(--poppins);
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 900;
+    color: var(--nero);
+}
+.title div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+/* make text caps no matter the entry */
+/* https://www.w3schools.com/cssref/css3_pr_transform.asp */
+.title div h2{
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-family: var(--poppins);
+    font-weight: 800;
+}
+.container{
+    width: 20vw;
+    margin: 0 auto;
+}
+
+/* https://www.w3schools.com/cssref/css3_pr_mediaquery.asp */
+
+@media screen and (min-width: 500px){
+    .title > h2{
+        font-size: 6rem;
+    }
+    .title div h2{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .container{
+        width: 88vw;
+    }
+}
+@media screen and (min-width: 1200px){
+    .container{
+        width: 85vw;
+    }
+}
+
+/* https://www.w3schools.com/css/css_important.asp */
+/* styling to stop transition & animation on resize,  */
+.resize-animation-stopper *{
+    animation: none !important;
+    transition: none !important;
+}
